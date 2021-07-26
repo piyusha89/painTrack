@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary ion-text-center">
+    <ion-title>
+      Create Pain Level
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-top">
+  <ion-item>
+    <ion-label>Dark Theme</ion-label>
+    <ion-toggle slot="end" (ionChange)="toggleTheme($event)"></ion-toggle>
+  </ion-item>
+  <ion-item lines="none">
+    <i class="fas fa-smile-beam fa-2x" id="happy"></i>
+    <ion-range min="0" max="10" step="1" snaps="true" pin="true" value={{level}} (ionChange)="rangeSelect($event)">
+    </ion-range>
+    <i class="fas fa-angry fa-2x" id="sad"></i>
+  </ion-item>
+  <ion-item lines="none" class="ion-padding-top">
+    <ion-label slot="start">Pain Level</ion-label>
+    <ion-text slot="end">{{level}}</ion-text>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label slot="start">Pain Expression</ion-label>
+    <ion-text slot="end">
+      <i *ngIf="(level==0) ||(level ==1) ||(level ==2)" class="fas fa-smile-beam fa-2x happy1"></i>
+      <i *ngIf="(level==3) ||(level ==4)" class="fas fa-smile-wink fa-2x happy1"></i>
+      <i *ngIf="(level ==5)||(level ==6) ||(level ==7)" class="fas fa-meh fa-2x happy1"></i>
+      <i *ngIf="(level==8) ||(level ==9) ||(level ==10)" class="fas fa-angry fa-2x" id="sad"></i>
+    </ion-text>
+  </ion-item>
+  
+  <ion-button class="ion-margin" expand="block" shape="round" (click)="onClick()">Submit</ion-button>
+</ion-content>

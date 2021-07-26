@@ -1,0 +1,7 @@
+{
+  "name": "painlevel",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
