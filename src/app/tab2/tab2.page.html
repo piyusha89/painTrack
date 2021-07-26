@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary ion-text-center">
+    <ion-title>
+      Previous Pain Levels
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <ion-card *ngFor="let pain of painList">
+    <ion-card-content class="ion-no-padding">
+      <ion-item lines="none">
+        <ion-label slot="start">Pain Level</ion-label>
+        <ion-text slot="end">{{pain.level}}</ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label slot="start">Pain Date</ion-label>
+        <ion-text slot="end">{{pain.time|date:'MMM d, y'}}</ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label slot="start">Pain Time</ion-label>
+        <ion-text slot="end">{{pain.time|date:'h:mm a'}}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
